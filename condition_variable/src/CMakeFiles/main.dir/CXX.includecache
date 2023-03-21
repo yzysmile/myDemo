@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yzyrobot/C++_thread/condition_variable/src/A.hpp
+iostream
+-
+thread
+-
+mutex
+-
+condition_variable
+-
+
+/home/yzyrobot/C++_thread/condition_variable/src/B.hpp
+iostream
+-
+thread
+-
+mutex
+-
+A.hpp
+/home/yzyrobot/C++_thread/condition_variable/src/A.hpp
+
+/home/yzyrobot/C++_thread/condition_variable/src/main.cpp
+B.hpp
+/home/yzyrobot/C++_thread/condition_variable/src/B.hpp
+chrono
+-
+
