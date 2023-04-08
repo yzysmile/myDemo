@@ -18,7 +18,7 @@ install(TARGETS
 
 # Install launch files.
 install(DIRECTORY 
-        launch
+        bringup/launch bringup/params
         DESTINATION share/${PROJECT_NAME}
 )
 

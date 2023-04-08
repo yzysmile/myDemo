@@ -1,3 +1,0 @@
-/home/yzyrobot/C++_thread/condition_variable/src/CMakeFiles/rebuild_cache.dir
-/home/yzyrobot/C++_thread/condition_variable/src/CMakeFiles/edit_cache.dir
-/home/yzyrobot/C++_thread/condition_variable/src/CMakeFiles/main.dir

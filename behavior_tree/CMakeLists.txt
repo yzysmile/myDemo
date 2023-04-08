@@ -14,14 +14,14 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(behaviortree_cpp_v3 REQUIRED)
 
-add_executable(first_behavior_tree src/behavior_tree/your_first_behavior_tree.cpp)
+add_executable(first_behavior_tree src/behavior_tree/00your_first_behavior_tree.cpp)
 ament_target_dependencies(first_behavior_tree rclcpp behaviortree_cpp_v3)
 install(TARGETS 
         first_behavior_tree
         DESTINATION lib/${PROJECT_NAME}
 )
 
-add_executable(blackboard_and_ports src/behavior_tree/blackboard_and_ports.cpp)
+add_executable(blackboard_and_ports src/behavior_tree/01blackboard_and_ports.cpp)
 ament_target_dependencies(blackboard_and_ports rclcpp behaviortree_cpp_v3)
 install(TARGETS 
         blackboard_and_ports
@@ -32,6 +32,27 @@ add_executable(ports_with_generic_types src/behavior_tree/02ports_with_generic_t
 ament_target_dependencies(ports_with_generic_types rclcpp behaviortree_cpp_v3)
 install(TARGETS 
         ports_with_generic_types
+        DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(reactive_behavior src/behavior_tree/03reactive_behavior.cpp)
+ament_target_dependencies(reactive_behavior rclcpp behaviortree_cpp_v3)
+install(TARGETS 
+        reactive_behavior
+        DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(subtrees src/behavior_tree/04subtrees.cpp)
+ament_target_dependencies(subtrees rclcpp behaviortree_cpp_v3)
+install(TARGETS 
+        subtrees
+        DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(port_remapping src/behavior_tree/05port_remapping.cpp)
+ament_target_dependencies(port_remapping rclcpp behaviortree_cpp_v3)
+install(TARGETS 
+        port_remapping
         DESTINATION lib/${PROJECT_NAME}
 )
 

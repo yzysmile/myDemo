@@ -10,7 +10,6 @@ struct Position2D
       double y;
     };
 
-// 这里的namespace必须要使用BT,为啥？
 namespace BT{
 // 使用模板特化将 std::string 转化为 struct Position2D
    template <> 
@@ -21,8 +20,7 @@ namespace BT{
         if (parts.size() != 2)
         {
             throw BT::RuntimeError("invalid input)");
-        }
-        else{
+        }else{
             Position2D output;
             // We can use the specialization convertFromString<double>()
             output.x = convertFromString<double>(parts[0]);
@@ -30,7 +28,7 @@ namespace BT{
             return output;
         }
    }
-}   // behaviortree
+}   // BT
     
 class CalculateGoal : public BT::SyncActionNode
 {
@@ -40,9 +38,11 @@ public:
 
   }
    
-  // 这个node中有一个 可将entry(entry的value类型是 Position2D)写入blackboard的port，port的名字为"goal"。
+  
   static BT::PortsList providedPorts()
   {
+    // 这个node中有一个 可将entry(entry的value类型是 Position2D)写入blackboard的port
+    // port的key为"goal"。
     return {BT::OutputPort<Position2D>("goal")};
   }
 
@@ -50,7 +50,7 @@ public:
   BT::NodeStatus tick() override
   {
     Position2D mygoal = {1.1, 2.3};
-    // 设置entry的value为 mygoal
+    // key为"goal"， value为 mygoal，写入blackboard
     setOutput("goal", mygoal);
     return BT::NodeStatus::SUCCESS;
   }
@@ -66,7 +66,8 @@ public:
   
   static BT::PortsList providedPorts()
   {
-    // 这个node中有一个 可读blackboard中entry的port，port的名字为"target"。
+    // 这个node中有一个 可读blackboard中entry的port
+    // key为"target"
     const char* description = "Simply print the target on console...";
     return {BT::InputPort<Position2D>("target", description)};
   }
@@ -83,6 +84,4 @@ public:
     printf("Target positions: [ %.1f, %.1f ]\n", goal.x, goal.y);
     return BT::NodeStatus::SUCCESS;
   }
-  
-  
 };

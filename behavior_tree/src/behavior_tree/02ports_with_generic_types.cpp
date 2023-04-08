@@ -21,28 +21,17 @@ int main()
   factory.registerNodeType<PrintTarget>("PrintTarget");
 
   auto tree = factory.createTreeFromText(xml_text);
+  // 解析错误???
+  // auto tree = factory.createTreeFromText("/home/yzyrobot/myself_demo/src/behavior_tree/02ports_with_generic_types.xml");
   tree.tickRootWhileRunning();
 
   return 0;
 }
+
+
 /* Expected output:
 
     Target positions: [ 1.1, 2.3 ]
     Converting string: "-1;3"
     Target positions: [ -1.0, 3.0 ]
 */
-
-
-
-// int main()
-// {
-//   BT::BehaviorTreeFactory factory;
-//   factory.registerNodeType<CalculateGoal>("CalculateGoal");
-//   factory.registerNodeType<PrintTarget>("PrintTarget");
-  
-//   auto tree = factory.createTreeFromText("/home/yzyrobot/myself_demo/src/behavior_tree/two_my_tree.xml");
-   
-//   tree.tickRootWhileRunning();
-//   //  ID（"CalculateGoal"）  port's name     key    value(optional)
-//   return 0;
-// }
