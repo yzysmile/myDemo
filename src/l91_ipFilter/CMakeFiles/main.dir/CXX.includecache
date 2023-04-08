@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yzyrobot/C++_thread/l91_ipFilter/main.cpp
+iostream
+-
+string
+-
+map
+-
+vector
+-
+unordered_map
+-
+

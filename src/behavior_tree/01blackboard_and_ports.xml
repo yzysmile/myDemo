@@ -1,0 +1,14 @@
+<root BTCPP_format="4" >
+    <BehaviorTree ID="MainTree">
+       <Sequence name="root_sequence">
+           <!--节点名称       key="value"-->
+           <SaySomething     message="Hello" /> 
+
+           <!--节点名称       key="{新key}"-->
+           <ThinkWhatToSay   text="{the_answer}"/>
+
+           <!--节点名称       key="{新key}"-->
+           <SaySomething     message="{the_answer}" />
+       </Sequence>
+    </BehaviorTree>
+</root>

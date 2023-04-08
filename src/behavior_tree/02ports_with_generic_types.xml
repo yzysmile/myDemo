@@ -1,0 +1,18 @@
+  <root BTCPP_format="4" >
+      <BehaviorTree ID="MainTree">
+         <Sequence name="root">
+             <!--节点名称    "key"="{新key}"-->
+             <CalculateGoal goal="{GoalPosition}" />
+
+             <!--节点名称    "key"="{新key}"-->
+             <PrintTarget   target="{GoalPosition}" />
+
+             <!--SetBlackboard   output_key="新key" value="具体值"-->
+             <SetBlackboard output_key="OtherGoal" value="-1;3"/>
+
+             <!--节点名称    "key"="{新key}"-->
+             <PrintTarget   target="{OtherGoal}" />
+         </Sequence>
+      </BehaviorTree>
+  </root>
+

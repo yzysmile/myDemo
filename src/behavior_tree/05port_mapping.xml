@@ -1,0 +1,30 @@
+<root main_tree_to_execute = "MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="main_sequence">
+            <!--节点名称    "port名称"="key" value="具体值"-->
+            <SetBlackboard output_key="move_goal" value="1;2;3" />
+
+            <!--子树ID="名称"    "子树blackboard的key"="主树blackboard的key" 
+                                "子树blackboard的key"="主树blackboard的key" -->
+            <SubTree ID="MoveRobot" target="move_goal" 
+                                    output="move_result" />
+            <SaySomething message="{move_result}"/> 
+        </Sequence>
+
+    </BehaviorTree>
+
+    <BehaviorTree ID="MoveRobot">
+        <Fallback name="move_robot_main">
+            <Sequence>
+                <MoveBase       goal="{target}"/>
+                 <!--SetBlackboard   output_key="key" value="具体值"-->
+                <SetBlackboard output_key="output" value="mission accomplished" />
+            </Sequence>
+            <ForceFailure>
+                 <!--SetBlackboard   output_key="key" value="具体值"-->
+                <SetBlackboard output_key="output" value="mission failed" />
+            </ForceFailure>
+        </Fallback>
+    </BehaviorTree>
+
+</root>

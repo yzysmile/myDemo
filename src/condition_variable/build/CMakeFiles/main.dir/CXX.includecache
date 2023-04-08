@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yzyrobot/myself_demo/src/condition_variable/A.hpp
+iostream
+-
+thread
+-
+mutex
+-
+condition_variable
+-
+
+/home/yzyrobot/myself_demo/src/condition_variable/B.hpp
+iostream
+-
+thread
+-
+mutex
+-
+A.hpp
+/home/yzyrobot/myself_demo/src/condition_variable/A.hpp
+
+/home/yzyrobot/myself_demo/src/condition_variable/main.cpp
+B.hpp
+/home/yzyrobot/myself_demo/src/condition_variable/B.hpp
+chrono
+-
+
