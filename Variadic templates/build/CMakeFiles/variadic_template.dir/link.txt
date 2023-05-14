@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/variadic_template.dir/maximum.cpp.o  -o variadic_template 
