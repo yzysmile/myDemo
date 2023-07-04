@@ -24,7 +24,7 @@ def generate_launch_description():
             )
         ),
         # 包含的launch文件中 声明(DeclareLaunchArgument) 3个参数
-        launch_arguments=[("bg_r","80"),("bg_g","80"),("bg_b","80")]
+        launch_arguments=[("bg_r","255"),("bg_g","0"),("bg_b","0")]
     )
     
     return LaunchDescription([include])

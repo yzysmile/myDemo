@@ -40,7 +40,7 @@ def generate_launch_description():
         # （当前节点运行中）
         # 使用 ros2 param dump <node_name> --output-dir <保存路径> 可自动生成yaml文件
          # e.g 本例中：ros2 param dump demo_Node --output-dir src/launch/config
-        parameters=[{"background_r": 255, "background_g": 255, "background_b": 0}]
+        parameters=[{"background_r": 255, "background_g": 255, "background_b": 255}]
     )
 
     turtle3 = Node(
